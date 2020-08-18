@@ -1,0 +1,30 @@
+ServiceName: ''
+apolloCluster: default
+apolloEnv: PRO
+env: SIT
+hostAliases:
+  hostNames: []
+  ip: 10.47.52.70
+httpGetPath: /actuator/health
+imageName: ''
+ingress:
+  enabled: true
+java_opts: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMPercentage=70.0
+namespace: ''
+node: FLS-AFLM-SPRINTBOOT-APP-CMN-prod
+port: ''
+replicaCount: 1
+resources:
+  limits:
+    cpu: '2'
+    memory: 4096Mi
+  requests:
+    cpu: '0.5'
+    memory: 1024Mi
+volumeMounts:
+- mountPath: /wls/wls81/logs
+  name: logs
+volumes:
+- hostPath:
+    path: /data/logs
+  name: logs
